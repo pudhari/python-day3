@@ -14,6 +14,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+pip install plotly
 
 st.set_page_config(page_title="ATCS Simulator (Intermediate)", layout="wide")
 
