@@ -46,4 +46,25 @@ base_cycle = 90  # seconds
 green_time = int(base_cycle * adj_congestion)
 
 # Red time = remaining cycle
-red_time =_
+red_time = base_cycle - green_time
+
+# --- OUTPUTS ---
+st.write("### Traffic State:", state)
+
+st.write("**Density:**", round(density, 2), "veh/km")
+st.write("**Congestion Index:**", round(adj_congestion, 3))
+
+# Clear green light duration
+st.subheader("🔵 Signal Timing Output (ATCS Decision)")
+st.write(f"### 🟢 Green Light Duration: **{green_time} seconds**")
+st.write(f"### 🔴 Red Light Duration: **{red_time} seconds**")
+
+st.info("""
+The ATCS assigns a longer green time when:
+- Volume is high  
+- Queue length increases  
+- Speed is low  
+- Heavy vehicles increase congestion  
+""")
+
+st.success("ATCS adjusts signal timings in real time based on the above calculations.")
